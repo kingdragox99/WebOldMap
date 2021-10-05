@@ -1,7 +1,8 @@
 <?php
 include 'config.php';   //import de la db
-include 'index.php';   //import de la db
+include 'header.php';   //import de header
 ?>
+
 <thead>
     <h1>LEADERBOADS</h1>
             <table>

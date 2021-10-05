@@ -31,7 +31,7 @@ include 'header.php';   //import de header
             }
 
             // on recupere le contenu de la table rankme
-            $reponse = $bdd->query('SELECT * FROM servers ORDER BY id DESC LIMIT 0, 100');
+            $reponse = $bdd->query('SELECT * FROM servers ORDER BY id LIMIT 0, 100');
 
             // on affiche chaque entree une a la suite
             while ($donnees = $reponse->fetch())

@@ -1,5 +1,6 @@
 # WebOldMap
 ![Test Image 1](public_html/img/logopetit.png)
+web test : http://pts.great-site.net/index.php?
 
 Connect your database in config.php
 

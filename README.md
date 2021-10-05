@@ -1,2 +1,6 @@
 # WebOldMap
-Old map web site
+Connect your database in
+config.php
+
+
+Made by Drago

@@ -14,7 +14,8 @@
     <body>
         <div class="container">
             <img src="img/CSSIMG.png" alt="imgcss" width="100%" height="100%">
-            <div class="center"><img src="img/logopetit.png" alt=""width="300px" height="100px"></div>
+            <div class="center"><img src="img/logopetit.png" alt=""width="300px" height="100px">
+            </div>
         </div>
         <form action="leaderboards.php">
             <button class="favorite styled" type="submit">LEADERBOARDS</button>

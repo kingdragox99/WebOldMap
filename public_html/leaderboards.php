@@ -1,23 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<html>
-    <head>
-        <link rel="stylesheet" href="main.css" type="text/css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap" rel="stylesheet">
-        <title>OLD MAP LEADERBORD</title>
-    </head>
-    <body>
-        <div class="container">
-            <img src="img/CSSIMG.png" alt="imgcss" width="100%" height="100%">
-            <div class="center"><img src="img/logopetit.png" alt=""width="300px" height="100px"></div>
-        </div>
-
-        <h2>LEADERBOADS</h2>
+<?php
+include 'config.php';   //import de la db
+include 'index.php';   //import de la db
+?>
+<thead>
+    <h1>LEADERBOADS</h1>
+            <table>
+                <tr>
+                    <th>Name : </th>
+                    <th>K/D : </th>
+                    <th>SCORE : </th>
+                </tr>
+            </table>
+</thead>
 
         <?php
-        include 'config.php';   //import de la db
             try
             {
             $host=$config['DB_HOST'];
@@ -33,7 +29,7 @@
             }
 
             // on recupere le contenu de la table rankme
-            $reponse = $bdd->query('SELECT * FROM rankme ORDER BY score DESC LIMIT 0, 20');
+            $reponse = $bdd->query('SELECT * FROM rankme ORDER BY score DESC LIMIT 0, 100');
 
             // on affiche chaque entree une a la suite
             while ($donnees = $reponse->fetch())
@@ -45,24 +41,18 @@
             $death = $donnees['deaths'];
             $score = $donnees['score'];
             $name = $donnees['name'];
+            if($death>1 && $kill>1){    // on evite la divison par 0 
             $kd = $kill/$death;
+        }
         ?>
-            <table>
-                <tr>
-                    <td>Name : </td>
-                    <td>K/D : </td>
-                    <td>SCORE : </td>
-                </tr>
-                <tr>
-                    <th><?php echo $name;?></th> 
-                    <th><?php echo $nombre_format_francais = number_format($kd, 2, ',', ' ');?></th> 
-                    <th><?php echo $score;?></th>
-                </tr>            
-            </table>  
+
+        <table>
+                    <td><?php echo $name;?></td>
+                    <td><?php echo $nombre_format_francais = number_format($kd, 2, ',', ' ');?></td> 
+                    <td><?php echo $score;?></td>
+        </table>  
 <?php
 }
 
 $reponse->closeCursor(); // termine le traitement de la demande
 ?>
-<body> 
-</html>

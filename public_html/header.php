@@ -8,6 +8,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <title>OLD MAP</title>
     </head>
 
@@ -17,17 +18,22 @@
             <div class="center"><img src="img/logopetit.png" alt=""width="300px" height="100px">
             </div>
         </div>
+
         <form action="leaderboards.php">
             <button class="favorite styled" type="submit">LEADERBOARDS</button>
         </form>
+
+        <form action="index.php">
+            <button class="favorite styled" type="submit">SERVER</button>
+        </form>
+
         <form action="admin.php">
             <button class="favorite styled" type="submit">ADMIN</button>
         </form>
+
         <form action="faq.php">
             <button class="favorite styled" type="submit">FAQ</button>
         </form>
-        <form action="index.php">
-            <button class="favorite styled" type="submit">HOME</button>
-        </form>
+
     </body>
 </html>

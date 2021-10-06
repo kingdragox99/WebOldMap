@@ -1,5 +1,4 @@
-<link rel="stylesheet" href="admin.css" type="text/css">
-
+<link rel="stylesheet" href="asset/admin.css">
 
 <?php
 include 'config.php';   //import de la db
@@ -29,11 +28,15 @@ if(isset($_POST['but_submit'])){
 
 }
 ?>
+
+
+<!-- Marche pas cherche pas ! -->
+
 		<div class="container">
     		<form method="post" action="">
         		<div id="div_login">
             		<div>
-            			<img src="img/admin.png">
+            			<img src="asset/img/admin.png">
                 		<input type="text" class="textbox" id="txt_uname" name="txt_uname" placeholder="Username" />
             		</div>
             		<div>

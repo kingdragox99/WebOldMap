@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
+
 body{
   background-color: #082032;
   overflow-x:hidden;
@@ -7,12 +9,11 @@ h2{
   border: 1px solid black;
   border-radius: 3px;
   height: 40px;
+  width: 300px;
   color: #082032;
   text-align: center;
-  width: 300px;
   font-family: 'Open Sans', sans-serif;
-  align-items: center;
-  margin: 10 auto;
+  margin: 5px auto;
   background:url(img/brim.png);
   background-repeat: no-repeat;
   background-size: cover;
@@ -78,9 +79,4 @@ h2{
   top: 40px;
   width: 100%;
   text-align: center;
-}
-
-button {
-  height: 20px;
-  width: 150px;
 }

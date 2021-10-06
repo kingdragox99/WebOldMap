@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="main.css" type="text/css">
 <?php
 include 'config.php';   //import de la db
 include 'header.php';   //import de header
@@ -57,3 +58,6 @@ include 'header.php';   //import de header
 
 $reponse->closeCursor(); // termine le traitement de la demande
 ?>
+
+    </body>
+</html>

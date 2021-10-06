@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="main.css" type="text/css">
 <?php
 include 'config.php';   //import de la db
 include 'header.php';   //import de header
@@ -9,6 +10,7 @@ include 'header.php';   //import de header
                 <tr>
                     <th>Name : </th>
                     <th>K/D : </th>
+                    <th>ADR : </th>
                     <th>SCORE : </th>
                 </tr>
             </table>
@@ -38,22 +40,36 @@ include 'header.php';   //import de header
         ?>
 
         <?php
-            $kill = $donnees['kills'];      //en cree des vars pour les données
+            $kill = $donnees['kills'];                  //en cree des vars pour les données
             $death = $donnees['deaths'];
             $score = $donnees['score'];
             $name = $donnees['name'];
-            if($death>1 && $kill>1){    // on evite la divison par 0 
-            $kd = $kill/$death;
-        }
+
+            $roundst = $donnees['rounds_tr'];
+            $roundct = $donnees['rounds_ct'];
+            $damage = $donnees['damage'];
+
+            if($roundct>0 && $kill>0){                  // on evite la divison par 0  
+                $adr = $damage/($roundst + $roundct);   //adr cal
+            }
+
+            if($death>0 && $kill>0){                    // on evite la divison par 0  
+                $kd = $kill/$death;                     // Kd cal
+            }
         ?>
 
         <table>
-                    <td><?php echo $name;?></td>
-                    <td><?php echo $nombre_format_francais = number_format($kd, 2, ',', ' ');?></td> 
-                    <td><?php echo $score;?></td>
+            <td><?php echo $name;?></td>
+            <td><?php echo $nombre_format_francais = number_format($kd, 2, ',', ' ');?></td>
+            <td><?php
+            echo $nombre_format_francais = number_format($adr, 2, ',', ' ');?></td>
+            <td><?php echo $score;?></td>
         </table>  
 <?php
 }
 
 $reponse->closeCursor(); // termine le traitement de la demande
 ?>
+
+    </body>
+</html>

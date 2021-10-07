@@ -1,5 +1,5 @@
 # WebOldMap
-![Test Image 1](public_html/img/logopetit.png)
+![Test Image 1](public_html/asset/img/logopetit.png)
 web test : https://ptsstats.000webhostapp.com/
 
 Connect your database in config.php

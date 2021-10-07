@@ -29,7 +29,6 @@ if(isset($_POST['but_submit'])){
 }
 ?>
 
-
 <!-- Marche pas cherche pas ! -->
 
 		<div class="container">

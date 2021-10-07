@@ -4,7 +4,7 @@ include 'header.php';   //import de header
 ?>
 
 <thead>
-    <h1>LEADERBOADS</h1>
+    <h1>LEADERBOARDS</h1>
     <table>
         <tr>
             <th>Name : </th>
@@ -26,7 +26,7 @@ try {
 }
 
 // on recupere le contenu de la table rankme
-$reponse = $bdd->query('SELECT * FROM rankme ORDER BY score DESC LIMIT 0, 100');
+$reponse = $bdd->query('SELECT * FROM rankme ORDER BY score DESC LIMIT 0, 200');
 
 // on affiche chaque entree une a la suite
 while ($donnees = $reponse->fetch()) {
@@ -40,14 +40,16 @@ while ($donnees = $reponse->fetch()) {
 
     $roundst = $donnees['rounds_tr'];
     $roundct = $donnees['rounds_ct'];
+    
+    $roudall = $roundct + $roundst;
     $damage = $donnees['damage'];
 
-    if ($roundct > 0 && $kill > 0) {                  // on evite la divison par 0  
-        $adr = $damage / ($roundst + $roundct);   //adr cal
+    if ($damage >= 100 && $kill >= 10) {                    // on evite la divison par 0  
+        $adr = $damage / $roudall;                          //adr cal
     }
 
-    if ($death > 0 && $kill > 0) {                    // on evite la divison par 0  
-        $kd = $kill / $death;                     // Kd cal
+    if ($death > 0 && $kill > 0) {                          // on evite la divison par 0  
+        $kd = $kill / $death;                               // Kd cal
     }
     ?>
 
